@@ -20,6 +20,7 @@ class NacosClient
     const DEFAULT_TIMEOUT = 3;
 
     const DEFAULT_GROUP = 'DEFAULT_GROUP';
+    const DEFAULT_NAMESPACEID = 'public';
 
     const WORD_SEPARATOR = "\x02";
     const LINE_SEPARATOR = "\x01";
@@ -345,13 +346,15 @@ class NacosClient
      * 发送实例心跳
      * @param string $serviceName
      * @param BeatInfo $beat
+     * @param string $namespaceId
      * @return BeatResult
      */
-    public function sendInstanceBeat(string $serviceName, BeatInfo $beat)
+    public function sendInstanceBeat(string $serviceName, BeatInfo $beat, string $namespaceId = self::DEFAULT_NAMESPACEID)
     {
         $formParams = [
             'serviceName' => $serviceName,
             'beat' => json_encode($beat),
+            'namespaceId' => $namespaceId,
         ];
 
         $resp = $this->request('PUT', '/nacos/v1/ns/instance/beat', ['form_params' => $formParams]);
