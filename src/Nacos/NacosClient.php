@@ -20,7 +20,7 @@ class NacosClient
     const DEFAULT_TIMEOUT = 3;
 
     const DEFAULT_GROUP = 'DEFAULT_GROUP';
-    const DEFAULT_NAMESPACEID = 'public';
+    const DEFAULT_NAMESPACE_ID = 'public';
 
     const WORD_SEPARATOR = "\x02";
     const LINE_SEPARATOR = "\x01";
