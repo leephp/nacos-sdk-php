@@ -349,7 +349,7 @@ class NacosClient
      * @param string $namespaceId
      * @return BeatResult
      */
-    public function sendInstanceBeat(string $serviceName, BeatInfo $beat, string $namespaceId = self::DEFAULT_NAMESPACEID)
+    public function sendInstanceBeat(string $serviceName, BeatInfo $beat, string $namespaceId = self::DEFAULT_NAMESPACE_ID)
     {
         $formParams = [
             'serviceName' => $serviceName,
